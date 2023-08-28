@@ -1,4 +1,4 @@
-package com.klagan.price.business.usecase;
+package com.klagan.price.business.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

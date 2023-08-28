@@ -1,5 +1,8 @@
 package com.klagan.price.business.port.out;
 
-public interface ItemRepository {
+import com.klagan.price.business.domain.Item;
+import java.util.List;
 
+public interface ItemRepository {
+  List<Item> find(int productCode, int brandId);
 }

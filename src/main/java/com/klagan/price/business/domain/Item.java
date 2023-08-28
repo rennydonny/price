@@ -1,6 +1,7 @@
-package com.klagan.price.business.usecase;
+package com.klagan.price.business.domain;
 
-import java.time.LocalDate;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,8 +14,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class Item {
+
+  public static final String ITEM_DATE_FORMAT = "yyyy-MM-dd'-'HH.mm.ss";
   private int identifier;
-  private Brand brand;
-  private LocalDate startDate;
-  private LocalDate endDate;
+  private Product product;
+  private LocalDateTime startDate;
+  private LocalDateTime endDate;
+  private Price price;
+  private int priority;
+
+  public boolean isAvailable(LocalDateTime date) {
+    return true;
+  }
 }
