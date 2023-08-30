@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class Brand {
+
   private int identifier;
   private String name;
 }
