@@ -43,3 +43,39 @@ Se valorará:
 Diseño y construcción del servicio.
 Calidad de Código.
 Resultados correctos en los test.
+
+
+### Soluciòn
+1. Clonar el repositorio: `git clone git@github.com:rennydonny/price.git`
+2. Bajo el directorio : `cd price`
+3. Ejecutar: `./gradlew bootRun`
+4. Luego, desde un cliente rest de su preferencia puede pobrar el servicio:
+   * url : `http://localhost:8080/api/price/v1/items/search`
+   * request as json:
+   ```json
+   {
+   "dateTimeSearching":"2020-06-16-21.00.00",
+   "productCode":35455,
+   "brandCode":1
+   }
+   ```
+5. Para correr los test unitarios y de integración, bajo el directorio del proyecto ejecutar `./gradlew clean test --info`
+6. Para fines prácticos se han colocado los test de integración junto a los unitarios, pero se recomienda separarlos en una directorio por ejemplo `intTest` bajo el directorio `src`
+   Ejemplo de ejecuciones:
+   1. ![](src/main/resources/images/FinalPricingUseCaseTest.png)
+   2. ![](src/main/resources/images/FinalPricingIntegrationTests.png)
+7. Ejemplo de pruebas desde postman
+   1. [x] Test 1: petición a las 10:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+      ![](src/main/resources/images/2020-06-14-10.00.00.png)
+   2. [x] Test 2: petición a las 16:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+      ![](src/main/resources/images/2020-06-14-16.00.00.png)
+   3. [x] Test 3: petición a las 21:00 del día 14 del producto 35455   para la brand 1 (ZARA)
+      ![](src/main/resources/images/2020-06-14-21.00.00.png)
+   4. [x] Test 4: petición a las 10:00 del día 15 del producto 35455   para la brand 1 (ZARA)
+      ![](src/main/resources/images/2020-06-15-10.00.00.png)
+   5. [x] Test 5: petición a las 21:00 del día 16 del producto 35455   para la brand 1 (ZARA)
+      ![](src/main/resources/images/2020-06-16-21.00.00.png)
+   6. [x] Test 6: petición para cualquier día del año 2023
+      ![](src/main/resources/images/2023-06-16-21.00.00.png)
+   7. [x] Test 7: petición sin atributos mandatorios (BAD REQUEST)
+      ![](src/main/resources/images/bad_request.png)
