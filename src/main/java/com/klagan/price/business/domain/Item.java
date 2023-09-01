@@ -16,8 +16,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class Item {
-
-  public static final String ITEM_DATETIME_FORMAT = "yyyy-MM-dd'-'HH.mm.ss";
   private int identifier;
   private Product product;
   private LocalDateTime startDate;

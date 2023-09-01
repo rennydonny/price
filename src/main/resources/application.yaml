@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: admin
+    password: admin
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: on
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: false
+  application:
+    name: price
+server:
+  servlet:
+    context-path: /api/${spring.application.name}/v1
+  port: 8080
