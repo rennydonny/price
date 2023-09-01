@@ -13,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class Price {
+
   private Currency currency;
   private BigDecimal amount;
 }
